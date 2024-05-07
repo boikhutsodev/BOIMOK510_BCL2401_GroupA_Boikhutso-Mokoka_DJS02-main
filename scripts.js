@@ -25,5 +25,12 @@ form.addEventListener("submit", (event) => {
     return; // Exit the function to prevent further execution
   }
 
+  // Check if inputs are valid numbers
+  if (isNaN(dividendNum) || isNaN(dividerNum)) {
+    result.innerText = "Something critical went wrong. Please reload the page.";
+    console.error("Invalid input");
+    return; // Exit the function to prevent further execution
+  }
+
   result.innerText = Math.floor(dividend / divider);
 });
