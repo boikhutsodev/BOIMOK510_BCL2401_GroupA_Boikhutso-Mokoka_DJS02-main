@@ -13,5 +13,17 @@ form.addEventListener("submit", (event) => {
     return; // Exit the function to prevent further execution
   }
 
+  // Convert inputs to numbers
+  const dividendNum = parseFloat(dividend);
+  const dividerNum = parseFloat(divider);
+
+  // Check if divider is 0
+
+  if (dividerNum === 0) {
+    result.innerText =
+      "Division not performed. Invalid number provided.. Try again.";
+    return; // Exit the function to prevent further execution
+  }
+
   result.innerText = Math.floor(dividend / divider);
 });
