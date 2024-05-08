@@ -17,20 +17,19 @@ form.addEventListener("submit", (event) => {
   const dividendNum = parseFloat(dividend);
   const dividerNum = parseFloat(divider);
 
-  // Check if divider is 0
-
-  if (dividerNum === 0) {
-    result.innerText =
-      "Division not performed. Invalid number provided.. Try again.";
-    return; // Exit the function to prevent further execution
-  }
-
   // Check if inputs are valid numbers
   if (isNaN(dividendNum) || isNaN(dividerNum)) {
     result.innerText = "Something critical went wrong. Please reload the page.";
-    console.error("Invalid input");
     return; // Exit the function to prevent further execution
   }
 
-  result.innerText = Math.floor(dividend / divider);
+  // Check if divider is 0
+  if (dividerNum === 0) {
+    result.innerText =
+      "Division not performed. Divider cannot be zero. Try again.";
+    return; // Exit the function to prevent further execution
+  }
+
+  // Perform division
+  result.innerText = Math.floor(dividendNum / dividerNum);
 });
