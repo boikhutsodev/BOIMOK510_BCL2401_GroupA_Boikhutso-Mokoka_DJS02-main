@@ -19,6 +19,7 @@ form.addEventListener("submit", (event) => {
 
   // Check if inputs are valid numbers
   if (isNaN(dividendNum) || isNaN(dividerNum)) {
+    result.classList.add("critical-error");
     result.innerText = "Something critical went wrong. Please reload the page.";
     return; // Exit the function to prevent further execution
   }
