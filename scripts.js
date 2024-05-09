@@ -21,6 +21,7 @@ form.addEventListener("submit", (event) => {
   if (isNaN(dividendNum) || isNaN(dividerNum)) {
     result.classList.add("critical-error");
     result.innerText = "Something critical went wrong. Please reload the page.";
+    console.error("error");
     return; // Exit the function to prevent further execution
   }
 
@@ -28,6 +29,7 @@ form.addEventListener("submit", (event) => {
   if (dividerNum === 0) {
     result.innerText =
       "Division not performed. Divider cannot be zero. Try again.";
+    console.error("error");
     return; // Exit the function to prevent further execution
   }
 
